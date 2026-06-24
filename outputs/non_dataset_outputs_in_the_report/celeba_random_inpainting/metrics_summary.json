@@ -1,0 +1,9 @@
+{
+  "processed_images": 1,
+  "psnr_reconstruction": 30.168094635009766,
+  "psnr_noisy": 12.340838432312012,
+  "ssim_reconstruction": 0.9329613965690745,
+  "ssim_noisy": 0.24659127551456392,
+  "lpips_reconstruction": 0.02553693950176239,
+  "lpips_noisy": 0.9286521077156067
+}

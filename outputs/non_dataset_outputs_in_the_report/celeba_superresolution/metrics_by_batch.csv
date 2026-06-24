@@ -1,0 +1,2 @@
+batch,num_images,psnr_reconstruction,psnr_noisy,ssim_reconstruction,ssim_noisy,lpips_reconstruction,lpips_noisy
+0,1,28.20038604736328,12.043428421020508,0.8807030648883606,0.22577263869100006,0.06304077059030533,0.8095525503158569

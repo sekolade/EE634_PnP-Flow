@@ -1,0 +1,56 @@
+
+
+# ============================================================
+# CELEBA — 128x128, checkpoint models/celeba/ot/model_final.pt
+# ============================================================
+
+# 1) Denoising: sigma_noise=0.20, alpha=0.8, steps=100
+python run.py --dataset celeba --problem denoising --input-dir input_images --checkpoint models/celeba/ot/model_final.pt --output-dir outputs/celeba_denoising --image-size 128 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.20 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.8 --num-samples 5 --gamma-style alpha_1_minus_t
+
+# 2) Gaussian deblurring: blur sigma=1, kernel=61, sigma_noise=0.05
+python run.py --dataset celeba --problem gaussian_deblurring_FFT --input-dir input_images --checkpoint models/celeba/ot/model_final.pt --output-dir outputs/celeba_deblurring --image-size 128 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.05 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.01 --num-samples 5 --gamma-style alpha_1_minus_t --sigma-blur 1.0 --kernel-size 61
+
+# 3) Super-resolution: factor=2, sigma_noise=0.05
+python run.py --dataset celeba --problem superresolution --input-dir input_images --checkpoint models/celeba/ot/model_final.pt --output-dir outputs/celeba_superresolution --image-size 128 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.05 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.3 --num-samples 5 --gamma-style alpha_1_minus_t --superresolution-factor 2
+
+# 4) Random inpainting: missing ratio=0.70, sigma_noise=0.01
+python run.py --dataset celeba --problem random_inpainting --input-dir input_images --checkpoint models/celeba/ot/model_final.pt --output-dir outputs/celeba_random_inpainting --image-size 128 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.01 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.01 --num-samples 5 --gamma-style alpha_1_minus_t --missing-ratio 0.70
+
+# 5) Box inpainting: 40x40 box, sigma_noise=0.05
+python run.py --dataset celeba --problem inpainting --input-dir input_images --checkpoint models/celeba/ot/model_final.pt --output-dir outputs/celeba_box_inpainting --image-size 128 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.05 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.5 --num-samples 5 --gamma-style alpha_1_minus_t --box-half-size 20
+
+# ============================================================
+# AFHQ-CAT — 256x256, checkpoint models/afhq_cat/ot/model_final.pt
+# ============================================================
+
+# 6) Denoising: sigma_noise=0.20, alpha=0.8, steps=100
+python run.py --dataset afhq_cat --problem denoising --input-dir input_images --checkpoint models/afhq_cat/ot/model_final.pt --output-dir outputs/afhq_cat_denoising --image-size 256 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.20 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.8 --num-samples 5 --gamma-style alpha_1_minus_t
+
+# 7) Gaussian deblurring: blur sigma=3, kernel=61, sigma_noise=0.05
+python run.py --dataset afhq_cat --problem gaussian_deblurring_FFT --input-dir input_images --checkpoint models/afhq_cat/ot/model_final.pt --output-dir outputs/afhq_cat_deblurring --image-size 256 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.05 --steps-pnp 500 --lr-pnp 1.0 --alpha 0.01 --num-samples 5 --gamma-style alpha_1_minus_t --sigma-blur 3.0 --kernel-size 61
+
+# 8) Super-resolution: factor=4, sigma_noise=0.05
+python run.py --dataset afhq_cat --problem superresolution --input-dir input_images --checkpoint models/afhq_cat/ot/model_final.pt --output-dir outputs/afhq_cat_superresolution --image-size 256 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.05 --steps-pnp 500 --lr-pnp 1.0 --alpha 0.01 --num-samples 5 --gamma-style alpha_1_minus_t --superresolution-factor 4
+
+# 9) Random inpainting: missing ratio=0.70, sigma_noise=0.01
+python run.py --dataset afhq_cat --problem random_inpainting --input-dir input_images --checkpoint models/afhq_cat/ot/model_final.pt --output-dir outputs/afhq_cat_random_inpainting --image-size 256 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.01 --steps-pnp 200 --lr-pnp 1.0 --alpha 0.01 --num-samples 5 --gamma-style alpha_1_minus_t --missing-ratio 0.70
+
+# 10) Box inpainting: 80x80 box, sigma_noise=0.05
+python run.py --dataset afhq_cat --problem inpainting --input-dir input_images --checkpoint models/afhq_cat/ot/model_final.pt --output-dir outputs/afhq_cat_box_inpainting --image-size 256 --num-channels 3 --batch-size 4 --max-images 100 --seed 0 --noise-type gaussian --sigma-noise 0.05 --steps-pnp 100 --lr-pnp 1.0 --alpha 0.5 --num-samples 5 --gamma-style alpha_1_minus_t --box-half-size 40
+
+
+
+# LAPLACE NOTE:
+# main.py used sigma_noise=0.30 for every Laplace task. To run Laplace,
+# replace '--noise-type gaussian --sigma-noise ...' with
+# '--noise-type laplace --sigma-noise 0.30'.
+
+
+
+
+
+
+
+
+
+

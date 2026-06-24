@@ -1,0 +1,26 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+research_env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.tmp
+
+# Generated outputs
+
+# Runtime input images
+input_images/*
+!input_images/.gitkeep
