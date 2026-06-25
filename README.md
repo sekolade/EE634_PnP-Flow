@@ -7,7 +7,7 @@ PnP-Flow (Martin et al., 2025) is a plug-and-play image reconstruction method  c
 
 y = Hx + n
 
-where \(y\) is the noisy observation, \(x\) is the unknown clean image, \(H\) is the degradation operator, and \(n\) is the measurement noise, which is Gaussian in the experiments considered in the paper.
+where \(y\) is the noisy observation, \(x\) is the unknown clean image, \(H\) is the degradation operator, and \(n\) is the measurement noise, which is Gaussian or Laplacian in the experiments considered in the paper.
 
 By formulating the reconstruction problem as a maximum a posteriori (MAP) estimation problem, while treating \(x\) and \(y\) as random variables, and then applying proximal splitting, the formulation can be transformed into Plug-and-Play Forward-Backward Splitting (PnP-FBS). The corresponding formulas and derivation are provided in `report.pdf`. In PnP-FBS, a denoiser is used in place of the proximal operator associated with the image-prior term.
 
