@@ -34,10 +34,10 @@ There are two learned denoisers, one for each dataset. The reconstructed images 
 
 ## 2. Running the Code
 
-Everything below is for running the code in the github to solve inverse problems for few images (demonstration). To reproduce the paper I run and saved the results over all the datasets. To see that code, go to the following link, it has its own instructions there: 
 
-```https://colab.research.google.com/drive/1evivuYHVaerBox09D6nQ6BeWVaYCrPw9?usp=sharing```
 
+
+Everything below is for running the code in the Github to solve inverse problems for few images (demonstration). To reproduce the paper I run and saved the results over all the datasets. To see that code, go to the following link ```https://colab.research.google.com/drive/1evivuYHVaerBox09D6nQ6BeWVaYCrPw9?usp=sharing```, it has its own instructions there: 
 
 ### 2.1 Required Folders
 
