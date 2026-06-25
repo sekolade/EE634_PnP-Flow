@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-PnP-Flow is a plug-and-play image reconstruction method currently designed for linear inverse problems of the form
+PnP-Flow (Martin et al., 2025) is a plug-and-play image reconstruction method  currently designed for linear inverse problems of the form
 
 \[
 y = Hx + n,
