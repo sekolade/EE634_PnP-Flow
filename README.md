@@ -4,9 +4,8 @@
 
 PnP-Flow (Martin et al., 2025) is a plug-and-play image reconstruction method  currently designed for linear inverse problems of the form
 
-\[
-y = Hx + n,
-\]
+
+y = Hx + n
 
 where \(y\) is the noisy observation, \(x\) is the unknown clean image, \(H\) is the degradation operator, and \(n\) is the measurement noise, which is Gaussian in the experiments considered in the paper.
 
