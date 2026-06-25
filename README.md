@@ -35,26 +35,14 @@ There are two learned denoisers, one for each dataset. The reconstructed images 
 ## 2. Running the Code
 
 
-
-
-Everything below is for running the code in the Github to solve inverse problems for few images (demonstration). To reproduce the paper I run and saved the results over all the datasets. To see that code, go to the following link ```https://colab.research.google.com/drive/1evivuYHVaerBox09D6nQ6BeWVaYCrPw9?usp=sharing```, it has its own instructions there: 
+To reproduce the paper I run and saved the results over all the datasets. To see that code, go to the following link ```https://colab.research.google.com/drive/1evivuYHVaerBox09D6nQ6BeWVaYCrPw9?usp=sharing```, it has its own instructions there: 
 
 ### 2.1 Required Folders
 
-Place arbitrary RGB input images from one of the two datasets, CelebA and AFHQ-Cat, directly into the `input_images/` folder.
+Place arbitrary RGB input images directly into the `input_images/` folder.
 
-Since the datasets are very large, a `sample_inputs/` folder is included. It contains example test-set images from both datasets. Copy some images from one of the following dataset folders into `input_images/`:
+Since the datasets in the paper are very large, a `sample_inputs/` folder is included. It contains example test-set images from both datasets, also images that do not belong to either dataset. Place arbitrary RGB input images directly into the `input_images/` folder:
 
-```text
-sample_inputs/celeba/
-sample_inputs/afhq_cat/
-```
-
-You can also select images that do not belong to either dataset from the `non_dataset/` folder under `sample_inputs/`:
-
-```text
-sample_inputs/non_dataset/
-```
 
 ### 2.2 Models
 
@@ -62,7 +50,7 @@ The pretrained models are already included in the `models/` folder. There are tw
 
 ### 2.3 Running
 
-1. Open a terminal in the main project folder, where `run.py` is located.
+1. Open a terminal in the main project folder.
 
 2. Create a virtual environment and install the required packages.
 
@@ -84,11 +72,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-3. The `scripts.txt` file contains separate commands for all five inverse problems and both datasets evaluated in the paper.
-
-The inverse-problem parameters and the tuned algorithm hyperparameters for each inverse-problem and dataset pair are taken exactly from the paper and included as command-line arguments.
-
-Copy a complete command from `scripts.txt` and run it in the terminal.
+3. The `scripts.txt` file contains separate commands for all five inverse problems and both datasets evaluated in the paper. The inverse-problem parameters and the tuned algorithm hyperparameters for each inverse-problem and dataset pair are taken exactly from the paper and included as command-line arguments. Copy a complete command from `scripts.txt` and run it in the terminal.
 
 ### 2.4 Outputs
 
@@ -98,13 +82,8 @@ Each processed image receives the following output files:
 - `noisy_measurement.png`
 - `reconstruction.png`
 - `reconstruction_snapshots.png`
-
-The output folder also contains:
-
 - `run_config.json`
 - `metrics_summary.json`
-
-The snapshot figure has seven panels: the noisy measurement, the result after the first complete PnP-Flow iteration, and five equally spaced reconstruction states up to the final iteration. Each reconstruction panel is annotated with its iteration number and current \(t\) value.
 
 ## 3. Findings and Results
 
